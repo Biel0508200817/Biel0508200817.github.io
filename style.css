@@ -1,0 +1,653 @@
+/* VARIÁVEIS E CONFIGURAÇÕES */
+:root {
+    --black: #050505;
+    --dark-gray: #121212;
+    --medium-gray: #252525;
+    --light-gray: #a0a0a0;
+    --white: #ffffff;
+    --metal-gradient: linear-gradient(135deg, #444 0%, #fff 100%);
+    --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    background-color: var(--black); 
+    color: var(--white); 
+    font-family: 'Inter', sans-serif; 
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 100px 24px; }
+
+/* --- HERO COM IMAGEM E OVERLAY --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* Adicione sua imagem de fundo aqui */
+    background-image: url('https://carreiras.totidiversidade.com.br/wp-content/uploads/2024/07/front-end-e-back-end.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efeito Parallax */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), var(--black));
+    z-index: 1;
+}
+
+.hero-content { position: relative; z-index: 2; }
+
+.gradient-text {
+    background: var(--metal-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); letter-spacing: -2px; text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+.hero p { color: var(--light-gray); font-size: 1.2rem; margin-top: 15px; }
+
+.btn-main {
+    margin-top: 40px;
+    display: inline-block;
+    padding: 14px 40px;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+
+.btn-main:hover { background: #fff; color: #000; box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+
+/* --- SEÇÃO SOBRE & PERFIL --- */
+.about-grid { display: flex; gap: 80px; align-items: flex-start; flex-wrap: wrap; }
+.profile-column { flex: 1; min-width: 320px; display: flex; flex-direction: column; align-items: center; }
+
+.photo-wrapper {
+    width: 260px; height: 260px; padding: 4px;
+    background: var(--metal-gradient);
+    border-radius: 50%;
+    margin-bottom: 30px;
+}
+
+.profile-pic { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 6px solid var(--black); }
+
+/* --- SHELF DE INSÍGNIAS --- */
+.badges-shelf {
+    width: 100%;
+    background: var(--dark-gray);
+    border: 1px solid var(--medium-gray);
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.shelf-title { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--light-gray); text-align: center; margin-bottom: 20px; }
+
+.badges-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+
+.badge-card {
+    height: 65px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.badge-card img { width: 32px; filter: grayscale(100%); opacity: 0.5; transition: var(--transition); }
+
+.badge-card:hover { 
+    border-color: rgba(255,255,255,0.2); 
+    background: rgba(255,255,255,0.08); 
+    transform: translateY(-5px); 
+}
+.badge-card:hover img { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
+
+/* --- CONTEÚDO --- */
+.text-column { flex: 1.5; min-width: 320px; }
+.tagline { color: var(--light-gray); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 3px; }
+.text-column h2 { font-size: 3.5rem; margin: 20px 0 30px; line-height: 1.1; font-weight: 800; }
+.text-column p { font-size: 1.15rem; color: var(--light-gray); margin-bottom: 25px; }
+
+/* --- PROJETOS --- */
+.section-title { text-align: center; font-size: 3rem; margin-bottom: 60px; font-weight: 800; }
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.project-card { background: var(--dark-gray); border: 1px solid var(--medium-gray); overflow: hidden; transition: var(--transition); }
+.project-card:hover { border-color: #666; transform: translateY(-10px); }
+
+.card-thumb { height: 240px; background-size: cover; background-position: center; transition: var(--transition); }
+.project-card:hover .card-thumb { filter: brightness(1.2); transform: scale(1.05); }
+
+.card-info { padding: 30px; }
+.card-info h3 { margin-bottom: 12px; font-size: 1.4rem; }
+.card-info p { color: var(--light-gray); font-size: 0.95rem; }
+
+/* --- FOOTER --- */
+footer { border-top: 1px solid var(--medium-gray); background: #000; }
+.footer-flex { display: flex; justify-content: space-between; align-items: center; padding: 60px 24px; color: var(--light-gray); }
+.socials a { color: var(--white); text-decoration: none; margin-left: 25px; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+.socials a:hover { opacity: 0.7; }
+
+/* ANIMAÇÕES */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal-up { animation: fadeInUp 0.8s ease-out forwards; }
+.fade-in { animation: fadeInUp 1.2s ease-out forwards; opacity: 0; }
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+    .about-grid { flex-direction: column; text-align: center; }
+    .text-column h2 { font-size: 2.5rem; }
+    .footer-flex { flex-direction: column; gap: 30px; text-align: center; }
+}
+
+/* Variáveis de Luxo */
+:root {
+  --glass-bg: rgba(10, 10, 10, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --accent-color: #fff;
+  --transition-smooth: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.projects {
+  padding: 120px 0;
+  background: #050505;
+}
+
+.section-title {
+  color: #fff;
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 80px;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.section-title .accent {
+  opacity: 0.4;
+  font-weight: 300;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 50px;
+}
+
+.project-card {
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+  height: 500px;
+  background: #111;
+  cursor: pointer;
+}
+
+/* Efeito de Zoom na Imagem */
+.image-container {
+  width: 100%;
+  height: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+  filter: brightness(0.8) grayscale(0.2);
+}
+
+/* O Glassmorphism Flutuante */
+.card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px;
+  z-index: 2;
+}
+
+.card-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 30px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.category {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #888;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.card-glass h3 {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.card-glass p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* --- HOVER EFFECTS --- */
+
+.project-card:hover .image-container img {
+  transform: scale(1.1) rotate(-1deg);
+  filter: brightness(0.5) grayscale(0);
+}
+
+.project-card:hover .card-glass {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Brilho de Borda no Card */
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 32px;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* CONFIGURAÇÃO DO GRID */
+.projetos-container {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 25px;
+    margin-top: 40px;
+}
+
+/* O CARD */
+.projeto-card {
+    position: relative;
+    height: 350px; /* Altura fixa para manter o padrão */
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: var(--cor-escura);
+}
+
+.projeto-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* CAMADA ESCURA (OVERLAY) */
+.projeto-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Fundo preto transparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    opacity: 0; /* Invisível por padrão */
+    transition: opacity 0.4s ease;
+}
+
+/* CONTEÚDO DENTRO DO OVERLAY */
+.projeto-info {
+    transform: translateY(20px); /* Começa um pouco abaixo */
+    transition: transform 0.4s ease;
+    color: #fff;
+    text-align: center;
+}
+
+.projeto-info h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--cor-primaria);
+}
+
+.projeto-info p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+/* LINGUAGENS */
+.projeto-techs {
+    margin-bottom: 25px;
+}
+
+.projeto-techs span {
+    font-size: 11px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin: 0 3px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* BOTÕES DENTRO DO OVERLAY */
+.projeto-botoes {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.projeto-botoes a {
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-demo {
+    background-color: var(--cor-primaria);
+    color: #fff !important;
+}
+
+.btn-codigo {
+    border: 1px solid #fff;
+    color: #fff !important;
+}
+
+.btn-codigo:hover {
+    background: #fff;
+    color: #000 !important;
+}
+
+/* EFEITO HOVER - QUANDO PASSA O MOUSE */
+.projeto-card:hover .projeto-overlay {
+    opacity: 1; /* Mostra o overlay */
+}
+
+.projeto-card:hover .projeto-info {
+    transform: translateY(0); /* Sobe o texto para a posição original */
+}
+
+.projeto-card:hover img {
+    transform: scale(1.1); /* Zoom sutil na imagem de fundo */
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 992px) {
+    .projetos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .projetos-grid {
+        grid-template-columns: 1fr;
+    }
+    .projeto-card {
+        height: 300px;
+    }
+}
+
+:root {
+    --cor-primaria: #ca3c3f;
+    --cor-primaria-hover: #e64548;
+    --cor-fundo: #0a0a0a; /* Fundo preto profundo */
+    --cor-card: #161616;  /* Cinza muito escuro para os cards */
+    --cor-texto: #ffffff;
+    --cor-cinza: #a0a0a0;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* --- CSS ATUALIZADO PARA IMAGENS MENORES --- */
+
+/* GRID DE PROJETOS */
+.projetos-container {
+    padding: 60px 20px; /* Reduzi um pouco o padding vertical */
+    max-width: 1100px; /* Largura máxima ligeiramente menor */
+    margin: auto;
+}
+
+.titulo-secao {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 30px;
+    color: var(--cor-primaria); /* Destaque no título */
+}
+
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* O CARD MENOR */
+.projeto-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    /* AQUI ESTÁ A MUDANÇA PRINCIPAL: Altura reduzida para 240px */
+    height: 240px;
+    background: var(--cor-card);
+    border: 1px solid #222; /* Borda sutil para definição no fundo preto */
+}
+
+.projeto-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    transition: transform 0.5s ease;
+}
+
+/* OVERLAY E CONTEÚDO INTERNO (Ajustado para o tamanho menor) */
+.projeto-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.85); /* Um pouco mais escuro para legibilidade */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px; /* Menos padding interno */
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.projeto-card:hover .projeto-overlay { opacity: 1; }
+.projeto-card:hover img { transform: scale(1.1); }
+
+.projeto-info h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 5px; /* Menos margem */
+    font-size: 20px; /* Fonte um pouco menor */
+}
+
+.projeto-info p {
+    font-size: 13px; /* Texto descritivo menor */
+    margin-bottom: 10px; /* Menos margem */
+    color: #ddd;
+    line-height: 1.4;
+}
+
+.projeto-techs {
+    margin-bottom: 12px;
+}
+
+.projeto-techs span {
+    font-size: 10px; /* Tags menores */
+    background: #333;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin: 0 2px;
+    border: 1px solid #444;
+}
+
+/* Botões mais compactos */
+.projeto-botoes {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.projeto-botoes a {
+    padding: 6px 12px; /* Botões menores */
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 12px;
+    transition: 0.2s;
+}
+
+.btn-demo { background: var(--cor-primaria); color: white; }
+.btn-demo:hover { background: var(--cor-primaria-hover); }
+
+.btn-codigo { border: 1px solid #666; color: #ccc; }
+.btn-codigo:hover { border-color: white; color: white; background: #333; }
+
+
+/* RESPONSIVO ATUALIZADO */
+@media (max-width: 900px) {
+    .projetos-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .projetos-grid {
+        grid-template-columns: 1fr; /* 1 coluna no celular */
+    }
+    .projeto-card {
+       /* No celular, podemos deixar um pouquinho mais alto para caber o texto melhor se precisar */
+       height: 260px;
+    }
+}
+
+/* SEÇÃO REDES SOCIAIS - TEMA DARK */
+.secao-redes {
+    padding: 80px 20px;
+    background-color: #000; /* Fundo totalmente preto */
+    text-align: center;
+}
+
+.secao-redes h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.secao-redes p {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+/* LISTA DE CARDS */
+.redes-lista {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espaço entre os botões */
+    flex-wrap: wrap; /* Quebra linha no celular */
+}
+
+/* O CARD (PÍLULA) */
+.rede-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #111; /* Cinza quase preto */
+    border: 1px solid #222; /* Borda bem discreta */
+    border-radius: 50px; /* Formato de pílula */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+}
+
+/* IMAGEM (ÍCONE) DENTRO DA REDE */
+.rede-card img {
+    width: 20px; /* Imagem pequena e elegante */
+    height: 20px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* NOME DA REDE */
+.rede-card span {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+.rede-card:hover {
+    background-color: #1a1a1a;
+    border-color: var(--cor-primaria); /* Usa o seu vermelho #ca3c3f */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(202, 60, 63, 0.2); /* Brilho vermelho suave */
+}
+
+.rede-card:hover img {
+    transform: scale(1.1);
+}
+
+.rede-card:hover span {
+    color: var(--cor-primaria);
+}
+
+/* AJUSTE PARA O ÍCONE DO GITHUB FICAR BRANCO */
+.icon-white {
+    filter: invert(1);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 480px) {
+    .redes-lista {
+        flex-direction: column; /* No celular vira uma lista vertical */
+        align-items: center;
+    }
+    .rede-card {
+        width: 100%;
+        max-width: 250px; /* Não deixa ocupar a tela toda */
+        justify-content: center;
+    }
+}
