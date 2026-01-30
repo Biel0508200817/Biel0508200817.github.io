@@ -1,18 +1,195 @@
-<html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfolio | Gabriel Ribeiro de Menezes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>
-        Meu primeiro website
-    </title>
 </head>
 <body>
-    <h1>
-        Gabriel Ribeiro de Menezes
-    </h1>
 
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="reveal-up">Olá, eu sou <span class="gradient-text">  Gabriel Ribeiro de Menezes</span></h1>
+            <p class="fade-in">Desenvedor Iniciante de front-end, back-end & Analista de Banco de Dados</p>
+            <a href="#MeusProjetos" class="btn-main">Ver Projetos</a>
+        </div>
+    </header>
+
+    <section class="about" id="sobre">
+        <div class="container about-grid">
+            
+            <div class="profile-column">
+                <div class="photo-wrapper">
+                    <img src="img/1000391783.webp" alt="Sua Foto" class="profile-pic">
+                </div>
+
+                <div class="badges-shelf">
+                    <p class="shelf-title">Habilidades Aprendidas</p>
+                    <div class="badges-grid">
+                        <div class="badge-card" title="HTML">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png" alt="HTML">
+                        </div>
+                        <div class="badge-card" title="CS">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+                        </div>
+                        <div class="badge-card" title="JavaScript">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">
+                        </div>
+                        <div class="badge-card" title="Java">
+                            <img src="https://cdn.iconscout.com/icon/free/png-256/free-java-logo-icon-svg-download-png-1720088.png" alt="React">
+                        </div>
+                        <div class="badge-card" title="Node.js">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node">
+                        </div>
+                        <div class="badge-card" title="PHP">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/3840px-PHP-logo.svg.png" alt="TS">
+                        </div>
+                        <div class="badge-card" title="SQL">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Sql_data_base_with_logo.svg/330px-Sql_data_base_with_logo.svg.png" alt="TS">
+                        </div>
+                    </div>
+                    <p class="shelf-title">Habilidades á Aprender</p>
+                    <div class="badges-grid">
+                        <div class="badge-card" title="PWA">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Progressive_Web_Apps_Logo.svg/1280px-Progressive_Web_Apps_Logo.svg.png" alt="HTML">
+                        </div>
+                        <div class="badge-card" title="REACT">
+                            <img src="https://www.fullstackpython.com/img/logos/react.png" alt="HTML">
+                        </div>
+                        <div class="badge-card" title="REACT Native">
+                            <img src="https://www.okoone.com/wp-content/uploads/2024/06/React-native-2-logo.png" alt="HTML">
+                        </div>
+                    </div>
+                    <p class="shelf-title">Plataformas Utlizadas</p>
+                    <div class="badges-grid">
+                         <div class="badge-card" title="VS CODE">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/960px-Visual_Studio_Code_1.35_icon.svg.png" alt="HTML">
+                        </div>
+                        <div class="badge-card" title="Supabase">
+                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/supabase.webp" alt="HTML">
+                        </div>
+                        <div class="badge-card" title="Figma">
+                            <img src="https://static.vecteezy.com/system/resources/thumbnails/065/386/871/small_2x/figma-logo-icon-figma-app-editable-transparent-background-premium-social-media-design-for-digital-download-free-png.png" alt="HTML">
+                        </div>
+                        <div class="badge-card" title="GitHub">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/250px-GitHub_Invertocat_Logo.svg.png" alt="HTML">
+                        </div>
+                    
+                    </div>
+                    
     
+                </div>
+            </div>
+
+            <div class="text-column">
+                <span class="tagline">Quem eu sou</span>
+                <h2>Gabriel Ribeiro de Menezes</h2>
+                <h2>Aluno de Desenvolvimento de Sistemas </h2>
+                <p>Estudando Desenvolvimento de Sistemas na Escola SENAI Gaspar Ricardo Júnior</p>
+                <p>Já foi aprendido no curso:Linguagens de Marcação, Estilização, Programação, Banco de Dados, e sua Lógica, Aprendendo Tanto a parte Back-End e Front-End</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="projetos-container">
+    <h2 class="titulo-secao">Meus Projetos</h2>
     
+    <div class="projetos-grid">
+        <article class="projeto-card">
+            <img src="img/Captura de tela 2026-01-30 141654.png" alt="Projeto 1">
+            
+            <div class="projeto-overlay">
+                <div class="projeto-info">
+                    <h3>Gabriel TV F1</h3>
+                    <p>Um Site que Contém Corridas de F1</p>
+                    <div class="projeto-techs">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+                    <div class="projeto-botoes">
+                        <a href="https://biel0508200817.github.io/gabriel-tv-f1/" target="_blank" class="btn-demo">Projeto</a>
+                        <a href="https://github.com/Biel0508200817/gabriel-tv-f1" target="_blank" class="btn-codigo">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="projeto-card">
+            <img src="img/Captura de tela 2026-01-30 152845.png" alt="Projeto 2">
+            
+            <div class="projeto-overlay">
+                <div class="projeto-info">
+                    <h3>Galeria de Vídeos do Corinthias</h3>
+                    <p>Galera de Vídeos do Corinthians em Jogos que consquistam Títulos</p>
+                    <div class="projeto-techs">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+                    <div class="projeto-botoes">
+                        <a href="https://biel0508200817.github.io/Galeria-de-V-deos-Tema-Livre-Parte-2-/" target="_blank" class="btn-demo">Projeto</a>
+                        <a href="https://github.com/Biel0508200817/Galeria-de-V-deos-Tema-Livre-Parte-2-" target="_blank" class="btn-codigo">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="projeto-card">
+            <img src="img/Captura de tela 2026-01-30 150859.png" alt="Projeto 3">
+            
+            <div class="projeto-overlay">
+                <div class="projeto-info">
+                    <h3>CSS Pokémon</h3>
+                    <p>Projeto com exercícios de pokémon envolvendo CSS</p>
+                    <div class="projeto-techs">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+                    <div class="projeto-botoes">
+                        <a href="https://biel0508200817.github.io/css-pokemon/" target="_blank" class="btn-demo">Projeto</a>
+                        <a href="https://github.com/Biel0508200817/css-pokemon" target="_blank" class="btn-codigo">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+<section class="secao-redes">
+    <div class="container-redes">
+        <h2>Conecte-se comigo</h2>
+        <p>Estou disponível para novos projetos e parcerias.</p>
+        
+        <div class="redes-lista">
+            <a href="seu-link-aqui" target="_blank" class="rede-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+                <span>LinkedIn</span>
+            </a>
+            
+            <a href="https://github.com/Biel0508200817" target="_blank" class="rede-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="icon-white">
+                <span>GitHub</span>
+            </a>
+            
+            <a href="seu-link-aqui" target="_blank" class="rede-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+                <span>Instagram</span>
+            </a>
+
+            <a href="seu-link-aqui" target="_blank" class="rede-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="E-mail">
+                <span>E-mail</span>
+            </a>
+        </div>
+    </div>
+</section>
+    <footer>
+        <div class="container footer-flex">
+            <p>&copy; 2026 Gabriel Ribeiro de Menezes. .</p>
+            
+        </div>
+    </footer>
+
 </body>
 </html>
