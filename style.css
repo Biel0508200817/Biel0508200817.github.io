@@ -639,6 +639,14 @@ body {
     filter: invert(1);
 }
 
+}
+.link-whatzap img{
+    height: 60px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
 /* RESPONSIVIDADE */
 @media (max-width: 480px) {
     .redes-lista {
@@ -651,3 +659,4 @@ body {
         justify-content: center;
     }
 }
+
